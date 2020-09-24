@@ -19,6 +19,13 @@
 {% set PROJECTS_TITLE = PROJECTS_TITLE %}
 {% endif %}
 
+{# Label for Archives #}
+{% if not ARCHIVES_TITLE %}
+{% set ARCHIVES_TITLE = 'all posts' %}
+{% else %}
+{% set ARCHIVES_TITLE = ARCHIVES_TITLE %}
+{% endif %}
+
 {# Label for the Email subscription form #}
 {% if not EMAIL_SUBSCRIPTION_LABEL %}
 {% set EMAIL_SUBSCRIPTION_LABEL = 'Email Newsletter' %}
@@ -219,10 +226,8 @@ PROJECTS = [{
 {% set ARCHIVES_URL = ARCHIVES_URL %}
 {% endif %}
 
-{% if not SEARCH_URL %}
+{% if SEARCH_URL is not defined %}
 {% set SEARCH_URL = 'search.html' %}
-{% else %}
-{% set SEARCH_URL = SEARCH_URL %}
 {% endif %}
 
 {% if not APPLAUSE_BUTTON %}

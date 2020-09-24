@@ -88,11 +88,11 @@
     {% if articles and PROJECTS and LANDING_PAGE_TITLE %}
     {% set css_class = 'span12' %}
     {% endif %}
-    {% from '_includes/_defaults.html' import RECENT_ARTICLES_COUNT, ARCHIVES_URL, CATEGORIES_URL with context %}
+    {% from '_includes/_defaults.html' import RECENT_ARTICLES_COUNT, ARCHIVES_TITLE, ARCHIVES_URL, CATEGORIES_URL with context %}
     <div class="row-fluid">
         <div class="{{ css_class }}">
             <header>
-            <h1 id="recent-posts">Recent Posts <a id="allposts" href="{{ SITEURL }}/{{ ARCHIVES_URL }}">all posts</a></h1>
+            <h1 id="recent-posts">Recent Posts <a id="allposts" href="{{ SITEURL }}/{{ ARCHIVES_URL }}">{{ ARCHIVES_TITLE }}</a></h1>
             </header>
         <div class="recent-posts">
             {% for article in articles %}
