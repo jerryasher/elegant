@@ -15,6 +15,15 @@
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 
+    {% if article %}
+    {% if article.header_assets %}
+    <!-- page_specific_assets -->
+    {% for h in article.header_assets %}
+    {{ h }}
+    {% endfor %}
+    {% endif %}
+    {% endif %}
+
         {% if CLAIM_GOOGLE %}
         {% include '_includes/claim_google.html' with context %}
         {% endif %}
@@ -50,6 +59,15 @@
         {% include '_includes/feeds.html' %}
         {% endblock feed_links %}
         {% include '_includes/analytics.html' %}
+
+    {% if article %}
+    {% if article.footer_assets %}
+    {% for f in article.footer_assets %}
+    {{ f }}
+    {% endfor %}
+    {% endif %}
+    {% endif %}
+
     </head>
     <body>
         <div id="content">
